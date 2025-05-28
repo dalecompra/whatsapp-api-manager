@@ -22,10 +22,18 @@
             "apt-get update",
             "apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends",
             "rm -rf /var/lib/apt/lists/*",
+            "cd /app",
             "npm install"
         ]
     },
     "start": {
-        "command": "npm start"
+        "command": "cd /app && npm start"
+    },
+    "build": {
+        "commands": [
+            "cp -r /code/* /app/",
+            "cd /app",
+            "npm install"
+        ]
     }
 }
